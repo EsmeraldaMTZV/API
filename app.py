@@ -13,7 +13,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/search', methods=['POST'])
+@app.route('/search', methods=('GET', 'POST'))
 def search_recipe():
     recipe_query = request.form.get('query', '').strip()
 
