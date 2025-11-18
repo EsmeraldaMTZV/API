@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 app.secret_key = 'mi_clave_secreta'
 
-API_URL = "https://trackapi.nutritionix.com/v2/natural/nutrients"
+API = "https://trackapi.nutritionix.com/v2/natural/nutrients"
 API_ID = "85FE15DB"
 API_KEY = "5bec82b946a3675b9337148433234321"
 
@@ -39,7 +39,7 @@ def search_recipe():
 
     try:
         
-        resp = requests.get(API_URL, info=info, params=params, timeout=10)
+        resp = requests.get(API, info=info, params=params, timeout=10)
 
         print("STATUS CODE:", resp.status_code)  
         print("RESPUESTA JSON:", resp.json())      
