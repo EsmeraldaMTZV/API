@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Resultados para "{{ query }}"{% endblock %}
+{% block content %}
+
+<h3 class="mb-4">Resultados para "{{ query }}"</h3>
+
+{% for r in results %}
+<div class="card p-3 mb-3">
+
+    <h5>{{ r.food_name if r.food_name else r.brand_name }}</h5>
+
+    {% if r.nf_calories %}
+        <p><strong>Calorías:</strong> {{ r.nf_calories }}</p>
+    {% endif %}
+
+    {% if r.serving_qty %}
+        <p><strong>Porción:</strong> {{ r.serving_qty }} {{ r.serving_unit }}</p>
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,6 +1,23 @@
 {% extends "base.html" %}
-
+{% block title %}Buscar Recetas{% endblock %}
 {% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title mb-3 text-center">Buscar recetas</h4>
 
+                <form action="{{ url_for('search_recipe') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="query" class="form-label">Nombre del platillo</label>
+                        <input type="text" class="form-control" id="query" name="query" placeholder="Ej. pasta, smoothie, tacos...">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
